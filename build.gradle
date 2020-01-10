@@ -1,0 +1,62 @@
+buildscript {
+	ext.spring_boot_version = '2.2.2.RELEASE'
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.analuciabolico'
+version = '0.0.1'
+sourceCompatibility = '1.11'
+targetCompatibility = '1.11'
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile ('org.springframework.boot:spring-boot-starter-actuator')
+	compile ('org.springframework.boot:spring-boot-starter-cache')
+	compile ('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile ('org.springframework.boot:spring-boot-starter-data-redis')
+	compile ('org.springframework.boot:spring-boot-starter-security')
+	compile ('org.springframework.boot:spring-boot-starter-web')
+	compile ('org.flywaydb:flyway-core')
+	compileOnly ('org.projectlombok:lombok')
+	runtimeOnly ('com.h2database:h2')
+	annotationProcessor ('org.projectlombok:lombok')
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+ext {
+	set('snippetsDir', file("build/generated-snippets"))
+}
+
+test {
+	outputs.dir snippetsDir
+	useJUnitPlatform()
+}
