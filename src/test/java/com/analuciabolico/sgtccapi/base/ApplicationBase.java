@@ -1,4 +1,4 @@
-package com.analuciabolico.sgtccapi;
+package com.analuciabolico.sgtccapi.base;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,6 +8,7 @@ class ApplicationBase {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
