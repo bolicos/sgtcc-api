@@ -1,0 +1,34 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    banner-mode: "off"
+  application:
+    name: sgtcc-api
+  security:
+    user:
+      name: admin
+      password: 12345
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+server:
+  port: 8080
+#  compression:
+#    enabled: true
+#    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+#    min-response-size: 1024
+
+logging:
+  level:
+    root: INFO
+
+management:
+  endpoints:
+    web:
+      base-path: "/api/v1/"
+      cors:
+        allowed-origins: http://localhost:4200
+        allow-credentials: true
+        allowed-methods: GET, POST, PUT, DELETE, PATCH
