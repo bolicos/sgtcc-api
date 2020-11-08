@@ -14,11 +14,11 @@ spring:
       path: /h2
 
 server:
-  port: 8000
-#  compression:
-#    enabled: true
-#    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
-#    min-response-size: 1024
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
 
 logging:
   level:
@@ -29,6 +29,8 @@ management:
     web:
       base-path: "/api/v1/"
       cors:
-        allowed-origins: http://localhost:8080
         allow-credentials: true
-        allowed-methods: GET, POST, PUT, DELETE, PATCH
+        allowed-methods: GET, POST, PUT, PACTH, DELETE, OPTIONS, HEAD
+        allowed-origins:
+          - localhost:8080
+          - localhost:3000
