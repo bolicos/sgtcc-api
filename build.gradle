@@ -1,43 +1,22 @@
-buildscript {
-	ext.spring_boot_version = '2.2.2.RELEASE'
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version")
-	}
+plugins {
+	id 'org.springframework.boot' version '2.4.0-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'org.asciidoctor.convert' version '1.5.8'
+	id 'org.flywaydb.flyway' version '7.0.2'
+	id 'java'
+	id 'idea'
 }
-
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
 
 group = 'com.analuciabolico'
 version = '0.0.1'
-sourceCompatibility = '1.11'
-targetCompatibility = '1.11'
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 compileJava.options.encoding = 'UTF-8'
 
 repositories {
 	mavenCentral()
-}
-
-dependencies {
-	compile ('org.springframework.boot:spring-boot-starter-actuator')
-	compile ('org.springframework.boot:spring-boot-starter-cache')
-	compile ('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile ('org.springframework.boot:spring-boot-starter-security')
-	compile ('org.springframework.boot:spring-boot-starter-web')
-	compileOnly ('org.projectlombok:lombok')
-	runtimeOnly ('com.h2database:h2')
-	annotationProcessor ('org.projectlombok:lombok')
-
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
-	testImplementation 'org.springframework.security:spring-security-test'
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
 }
 
 configurations {
@@ -51,10 +30,48 @@ configurations {
 }
 
 ext {
+	set('springCloudVersion', "2020.0.0-SNAPSHOT")
+	set('flywayVersion', '7.0.2')
+	set('swaggerVersion', '2.9.2')
+	set('springBootVersion', '2.4.0-SNAPSHOT')
 	set('snippetsDir', file("build/generated-snippets"))
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation "org.flywaydb:flyway-core:${flywayVersion}"
+	implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+	implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
 
 test {
 	outputs.dir snippetsDir
 	useJUnitPlatform()
+}
+
+asciidoctor {
+	inputs.dir snippetsDir
+	dependsOn test
 }
