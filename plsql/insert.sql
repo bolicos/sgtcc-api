@@ -176,3 +176,25 @@ VALUES (5, 3);
 insert into CLASSES_STUDENTS(fk_student_uid, fk_class_uid, AVERAGE)
 VALUES (6, 2, 8.2);
 
+--PROPOSALS
+insert into PROPOSALS(id, title, created_at, fk_author_uid, fk_leader_uid)
+VALUES (SEQUENCE_PROPOSALS.nextval, 'Proposta sobre iot', SYSTIMESTAMP, 1, 1);
+
+insert into PROPOSALS(id, title, created_at, fk_author_uid, fk_leader_uid)
+VALUES (SEQUENCE_PROPOSALS.nextval, 'Proposta sobre big data', SYSTIMESTAMP, 2, 1);
+
+insert into PROPOSALS(id, title, created_at, fk_author_uid, fk_leader_uid)
+VALUES (SEQUENCE_PROPOSALS.nextval, 'Proposta sobre ruby', SYSTIMESTAMP, 3, 2);
+
+--EXAMINATIONS
+insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
+VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 1, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre iot', 8, 'avaliacao projeto tcc', SYSTIMESTAMP, 1, 5);
+
+insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
+VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 1, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre iot', 7, 'avaliacao projeto tcc', SYSTIMESTAMP, 1, 4);
+
+insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
+VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 0, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre big data', 5, 'avaliacao projeto tcc', SYSTIMESTAMP, 2, 5);
+
+insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
+VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 0, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre big data', 6, 'avaliacao projeto tcc', SYSTIMESTAMP, 2, 5);
