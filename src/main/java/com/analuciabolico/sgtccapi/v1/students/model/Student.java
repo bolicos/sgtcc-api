@@ -22,18 +22,18 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "ALUNOS")
-@SequenceGenerator(name = "SEQUENCE_ALUNOS", allocationSize = 1)
+@Table(name = "STUDENTS")
+@SequenceGenerator(name = "SEQUENCE_STUDENTS", allocationSize = 1)
 public class Student extends Person {
 
     @Id
-    @GeneratedValue(generator = "SEQUENCE_ALUNOS", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "SEQUENCE_STUDENTS", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @OneToMany(mappedBy = "autor")
+    @OneToMany(mappedBy = "author")
     private List<Proposal> proposals;
 
-    @OneToMany(mappedBy = "aluno")
-    private List<Class> avaliacoes;
+    @OneToMany(mappedBy = "student")
+    private List<Class> examinations;
 
 }
