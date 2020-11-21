@@ -4,6 +4,7 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
+
   jpa:
     show-sql: true
     hibernate:
@@ -11,3 +12,8 @@ spring:
 
   flyway:
     enabled: false
+
+  h2:
+    console:
+      enabled: true
+      path: /h2
