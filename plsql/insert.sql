@@ -31,97 +31,61 @@ insert into INTEREST_AREAS(ID, NAME, CREATED_AT, DESCRIPTION) values (SEQUENCE_I
 insert into INTEREST_AREAS(ID, NAME, CREATED_AT, DESCRIPTION) values (SEQUENCE_INTEREST_AREAS.nextval, 'api', SYSTIMESTAMP, 'descricao api');
 
 
---users
-insert into USERS(USERNAME, PASSWORD) VALUES ('paula', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('marta', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('paulo', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('lucia', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('gustavo', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('almir', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('caetano', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('alda', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('alex', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('alice', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('gelson', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('camila', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('heitor', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('flavia', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('marcos', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('ronaldo', '12345');
-
-insert into USERS(USERNAME, PASSWORD) VALUES ('talita', '12345');
-
-
 --STUDENTS
-insert into STUDENTS(id, cpf, email, created_at, registration, name, phone, fk_user_uid)
-values(SEQUENCE_STUDENTS.nextval, '36215540099', 'paula@gmail.com', SYSTIMESTAMP, '20188763456', 'paula da silva', '453829475', 'paula');
+insert into STUDENTS(id, cpf, email, created_at, registration, name, phone)
+values(SEQUENCE_STUDENTS.nextval, '36215540099', 'paula@gmail.com', SYSTIMESTAMP, '20188763456', 'paula da silva', '453829475');
 
-insert into STUDENTS(id, cpf, email, created_at, registration, name, phone, fk_user_uid)
-values(SEQUENCE_STUDENTS.nextval, '13385524067', 'marta@gmail.com', SYSTIMESTAMP, '20188763325', 'marta da silva', '451823475', 'marta');
+insert into STUDENTS(id, cpf, email, created_at, registration, name, phone)
+values(SEQUENCE_STUDENTS.nextval, '13385524067', 'marta@gmail.com', SYSTIMESTAMP, '20188763325', 'marta da silva', '451823475');
 
-insert into STUDENTS(id, cpf, email, created_at, registration, name, phone, fk_user_uid)
-values(SEQUENCE_STUDENTS.nextval, '82542796084', 'paulo@gmail.com', SYSTIMESTAMP, '20188734325', 'paulo dos santos', '881823475', 'paulo');
+insert into STUDENTS(id, cpf, email, created_at, registration, name, phone)
+values(SEQUENCE_STUDENTS.nextval, '82542796084', 'paulo@gmail.com', SYSTIMESTAMP, '20188734325', 'paulo dos santos', '881823475');
 
-insert into STUDENTS(id, cpf, email, created_at, registration, name, phone, fk_user_uid)
-values(SEQUENCE_STUDENTS.nextval, '96669645031', 'lucia@gmail.com', SYSTIMESTAMP, '20188723325', 'lucia dornelles', '885623475', 'lucia');
+insert into STUDENTS(id, cpf, email, created_at, registration, name, phone)
+values(SEQUENCE_STUDENTS.nextval, '96669645031', 'lucia@gmail.com', SYSTIMESTAMP, '20188723325', 'lucia dornelles', '885623475');
 
-insert into STUDENTS(id, cpf, email, created_at, registration, name, phone, fk_user_uid)
-values(SEQUENCE_STUDENTS.nextval, '83459345012', 'gustavo@gmail.com', SYSTIMESTAMP, '20188723367', 'gustavo soares', '236623475', 'gustavo');
+insert into STUDENTS(id, cpf, email, created_at, registration, name, phone)
+values(SEQUENCE_STUDENTS.nextval, '83459345012', 'gustavo@gmail.com', SYSTIMESTAMP, '20188723367', 'gustavo soares', '236623475');
 
-insert into STUDENTS(id, cpf, email, created_at, registration, name, phone, fk_user_uid)
-values(SEQUENCE_STUDENTS.nextval, '95276488070', 'almir@gmail.com', SYSTIMESTAMP, '20188721167', 'almir feitosa', '952764880', 'almir');
+insert into STUDENTS(id, cpf, email, created_at, registration, name, phone)
+values(SEQUENCE_STUDENTS.nextval, '95276488070', 'almir@gmail.com', SYSTIMESTAMP, '20188721167', 'almir feitosa', '952764880');
 
-insert into STUDENTS(id, cpf, email, created_at, registration, name, phone, fk_user_uid)
-values(SEQUENCE_STUDENTS.nextval, '21839697091', 'caetano@gmail.com', SYSTIMESTAMP, '20188721887', 'caetano veloso', '218396970', 'caetano');
+insert into STUDENTS(id, cpf, email, created_at, registration, name, phone)
+values(SEQUENCE_STUDENTS.nextval, '21839697091', 'caetano@gmail.com', SYSTIMESTAMP, '20188721887', 'caetano veloso', '218396970');
 
-insert into STUDENTS(id, cpf, email, created_at, registration, name, phone, fk_user_uid)
-values(SEQUENCE_STUDENTS.nextval, '97815488005', 'alda@gmail.com', SYSTIMESTAMP, '20188718736', 'alda maria', '978154880', 'alda');
+insert into STUDENTS(id, cpf, email, created_at, registration, name, phone)
+values(SEQUENCE_STUDENTS.nextval, '97815488005', 'alda@gmail.com', SYSTIMESTAMP, '20188718736', 'alda maria', '978154880');
 
 
 
 --TEACHERS
 --TEACHERS
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '10444746021', 'alex@gmail.com','20188763456', 'alex martins', '1044474', SYSTIMESTAMP, 2, 'alex');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '10444746021', 'alex@gmail.com','20188763456', 'alex martins', '1044474', SYSTIMESTAMP, 2);
 
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '68275207061', 'alice@gmail.com', '20184763456', 'alice novaes', '6827520', SYSTIMESTAMP, 3, 'alice');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '68275207061', 'alice@gmail.com', '20184763456', 'alice novaes', '6827520', SYSTIMESTAMP, 3);
 
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '87205611059', 'gelson@gmail.com', '20188363456', 'gelson melo', '87205611', SYSTIMESTAMP, 4, 'gelson');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '87205611059', 'gelson@gmail.com', '20188363456', 'gelson melo', '87205611', SYSTIMESTAMP, 4);
 
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '39560025040', 'camila@gmail.com', '20188333456', 'camila dos santos', '3956002', SYSTIMESTAMP, 5, 'camila');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '39560025040', 'camila@gmail.com', '20188333456', 'camila dos santos', '3956002', SYSTIMESTAMP, 5);
 
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '74158626005', 'heitor@gmail.com', '20188722456', 'heitor rodrigues', '74158626', SYSTIMESTAMP, 6, 'heitor');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '74158626005', 'heitor@gmail.com', '20188722456', 'heitor rodrigues', '74158626', SYSTIMESTAMP, 6);
 
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '68901037009', 'flavia@gmail.com', '20183363456', 'flavia golvea', '68901037', SYSTIMESTAMP, 5, 'flavia');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '68901037009', 'flavia@gmail.com', '20183363456', 'flavia golvea', '68901037', SYSTIMESTAMP, 5);
 
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '78857614018', 'marcos@gmail.com', '20188700456', 'marcos motta', '788576140', SYSTIMESTAMP, 4, 'marcos');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '78857614018', 'marcos@gmail.com', '20188700456', 'marcos motta', '788576140', SYSTIMESTAMP, 4);
 
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '22958935000', 'ronaldo@gmail.com', '20188223456', 'ronaldo machado', '22958935', SYSTIMESTAMP, 3, 'ronaldo');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '22958935000', 'ronaldo@gmail.com', '20188223456', 'ronaldo machado', '22958935', SYSTIMESTAMP, 3);
 
-INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID, FK_USER_UID) VALUES
-(SEQUENCE_TEACHERS.nextval, '43323537068', 'talita@gmail.com', '20188763986', 'talita franco', '43323537', SYSTIMESTAMP, 2, 'talita');
+INSERT INTO TEACHERS(ID, CPF, EMAIL, REGISTRATION, NAME, PHONE, CREATED_AT, FK_TITLE_UID) VALUES
+(SEQUENCE_TEACHERS.nextval, '43323537068', 'talita@gmail.com', '20188763986', 'talita franco', '43323537', SYSTIMESTAMP, 2);
 
 
 --interest areas teachers
