@@ -4,33 +4,51 @@ import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @MappedSuperclass
 public class Person {
 
-    @Column(nullable = false)
-    protected String nome;
+    @NonNull
+    @Column(length = 100, nullable = false, unique = true)
+    protected String name;
 
-    @Column(length = 100, nullable = false)
+    @NonNull
+    @Column(length = 100, nullable = false, unique = true)
     protected String email;
 
+    @NonNull
     @Column(length = 11, nullable = false)
-    protected String telefone;
+    protected String phone;
 
+    @NonNull
     @Column(length = 50, nullable = false, unique = true)
-    protected String matricula;
+    protected String registration;
 
+    @NonNull
     @Column(length = 11, nullable = false, unique = true)
     protected String cpf;
+
+    @NonNull
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(nullable = false)
+    protected LocalDateTime createdAt;
 }

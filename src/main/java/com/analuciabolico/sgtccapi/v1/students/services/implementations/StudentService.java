@@ -1,17 +1,22 @@
 package com.analuciabolico.sgtccapi.v1.students.services.implementations;
 
+import javax.persistence.EntityNotFoundException;
+import java.util.List;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
 import com.analuciabolico.sgtccapi.v1.students.dtos.StudentRequest;
 import com.analuciabolico.sgtccapi.v1.students.model.Student;
 import com.analuciabolico.sgtccapi.v1.students.repository.StudentRepository;
 import com.analuciabolico.sgtccapi.v1.students.services.interfaces.IStudentService;
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
-import java.util.List;
+import lombok.AllArgsConstructor;
+
+import static com.analuciabolico.sgtccapi.v1.core.validations.GenericMessagesValidationEnum.ENTITY_NOT_FOUND;
+import static com.analuciabolico.sgtccapi.v1.core.validations.MessageValidationProperties.getMessage;
 
 @Service
+@AllArgsConstructor
 public class StudentService implements IStudentService {
     private final StudentRepository studentRepository;
 
