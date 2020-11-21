@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
-import com.analuciabolico.sgtccapi.v1.users.model.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,8 +33,4 @@ public class Person {
 
     @Column(length = 11, nullable = false, unique = true)
     protected String cpf;
-
-    @OneToOne
-    @JoinColumn(name = "FK_USER_UID", nullable = false)
-    protected User user;
 }
