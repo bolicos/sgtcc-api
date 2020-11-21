@@ -36,7 +36,7 @@ public class Person {
     protected String email;
 
     @NonNull
-    @Column(length = 11, nullable = false)
+    @Column(length = 11, nullable = false, unique = true)
     protected String phone;
 
     @NonNull
