@@ -11,7 +11,7 @@ public class MessageValidationProperties {
         throw new IllegalStateException("Utility class");
     }
 
-    private static final String PROPERTIES = "ValidationMessages";
+    private static final String PROPERTIES = "validation-messages";
     private static final ResourceBundle bundle = getBundle(PROPERTIES);
 
     public static String getMessage(GenericMessagesValidationEnum enumProperties) {

@@ -6,11 +6,11 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum GenericMessagesValidationEnum {
-    REQUIRED_FIELD("javax.validation.constraints.NotNull.message"),
-    INVALID_EMAIL("invalidEmail.message"),
-    INVALID_CPF("invalidCpf.message"),
-    GENERIC_ERROR("genericError.message"),
-    ENTITY_NOT_FOUND("entityNotFound.message");
+    REQUIRED_FIELD("javax.validation.constraints.not.null.message"),
+    INVALID_EMAIL("invalid.email.message"),
+    INVALID_CPF("invalid.cpf.message"),
+    GENERIC_ERROR("generic.error.message"),
+    ENTITY_NOT_FOUND("entity.not.found.message");
 
     private final String key;
 }
