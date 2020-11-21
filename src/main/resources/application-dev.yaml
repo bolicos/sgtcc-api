@@ -1,6 +1,6 @@
 spring:
   datasource:
     url: jdbc:oracle:thin:@172.17.0.2:1521:XE
-    username: analucia_admin
-    password: apnp
+    username: sgtcc
+    password: sgtcc
     driver-class-name: oracle.jdbc.OracleDriver
