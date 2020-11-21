@@ -39,7 +39,6 @@ public class Student extends Person {
 
     @Id
     @NonNull
-    @Column(name = "UID_STUDENT")
     @GeneratedValue(generator = "SEQ_STUDENTS", strategy = GenerationType.SEQUENCE)
     private Long id;
 
