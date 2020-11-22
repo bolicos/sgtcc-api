@@ -1,15 +1,20 @@
 package com.analuciabolico.sgtccapi.v1.interest_areas.model;
 
 import io.micrometer.core.lang.NonNull;
-import lombok.Builder;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@Entity
+@Table(name = "INTEREST_AREAS")
+@SequenceGenerator(name = "SEQ_INTEREST_AREAS", sequenceName = "SEQUENCE_INTEREST_AREAS", allocationSize = 1)
 public class Interest_Area implements Serializable {
 
     @Builder
