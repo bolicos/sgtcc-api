@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.students.model.Student;
 
@@ -22,7 +23,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "CLASSES")
 @SequenceGenerator(name = "SEQ_CLASSES", sequenceName = "SEQUENCE_CLASSES", allocationSize = 1)
-public class Class {
+public class Class implements Serializable {
 
     @Id
     @GeneratedValue(generator = "SEQ_CLASSES", strategy = GenerationType.SEQUENCE)
