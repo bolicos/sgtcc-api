@@ -5,6 +5,15 @@ import com.analuciabolico.sgtccapi.v1.interest_areas.model.InterestArea;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class InterestAreaRequest implements Serializable {
     private String name;
     private String description;
