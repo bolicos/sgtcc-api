@@ -39,12 +39,18 @@ public class Teacher extends Person implements Serializable {
 
     @Builder
     public Teacher(@NonNull String name, @NonNull String email, @NonNull String phone, @NonNull String registration,
-                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals,
-                   Title title) {
+                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals, Title title,
+                   Set<Class> classes, Set<Board> boards, Set<Board> evaluator, Set<Examination> examinations,
+                   Set<Examination> suggestions) {
         super(name, email, phone, registration, cpf, createdAt);
         this.id = id;
         this.proposals = proposals;
         this.title = title;
+        this.classes = classes;
+        this.boards = boards;
+        this.evaluator = evaluator;
+        this.examinations = examinations;
+        this.suggestions = suggestions;
     }
 
     @Id
@@ -69,4 +75,7 @@ public class Teacher extends Person implements Serializable {
 
     @OneToMany(mappedBy = "teacher")
     private Set<Examination> examinations;
+
+    @OneToMany(mappedBy = "teacher")
+    private Set<Examination> suggestions;
 }
