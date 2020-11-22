@@ -22,7 +22,7 @@ public class TitleController implements Serializable {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Title>> getAll(@RequestParam(required = false, defaultValue = "ASC") String sort) {
-        List<Title> list = titleService.findAll(Sort.by(Sort.Direction.fromString(sort), "name"));
+        List<Title> list = titleService.findAll(Sort.by(Sort.Direction.fromString(sort), "nomenclature"));
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
