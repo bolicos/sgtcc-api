@@ -5,7 +5,7 @@ import com.analuciabolico.sgtccapi.v1.interest_areas.model.Interest_Area;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Interest_AreaRequest implements Serializable {
+public class InterestAreaRequest implements Serializable {
     private String name;
     private String description;
 
