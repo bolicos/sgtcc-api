@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "INTEREST_AREAS")
 @SequenceGenerator(name = "SEQ_INTEREST_AREAS", sequenceName = "SEQUENCE_INTEREST_AREAS", allocationSize = 1)
-public class Interest_Area implements Serializable {
+public class InterestArea implements Serializable {
 
     @Builder
     public Interest_Area(@NonNull String name, @NonNull LocalDateTime createdAt, @NonNull String description, @NonNull Long id) {
