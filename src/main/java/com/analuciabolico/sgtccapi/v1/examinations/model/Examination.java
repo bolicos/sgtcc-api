@@ -35,7 +35,7 @@ import lombok.ToString;
 public class Examination implements Serializable {
 
     @Builder
-    public Examination(Long id, @NonNull String presentation, @NonNull boolean approved, @NonNull String textContent,
+    public Examination(Long id, @NonNull String presentation, boolean approved, @NonNull String textContent,
                        @NonNull String textStructure, @NonNull String language, String observation,
                        @NonNull String relevance, @NonNull String title, @NonNull Double note, ExaminationTypeEnum type,
                        @NonNull LocalDateTime createdAt, @NonNull Proposal proposal, @NonNull Teacher teacher) {
@@ -63,7 +63,6 @@ public class Examination implements Serializable {
     @Column(nullable = false)
     private String presentation;
 
-    @NonNull
     @Column(nullable = false)
     private boolean approved;
 
