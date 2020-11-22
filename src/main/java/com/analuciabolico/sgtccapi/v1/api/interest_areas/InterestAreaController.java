@@ -27,7 +27,7 @@ public class InterestAreaController {
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Interest_Area> findById(@PathVariable Long id) {
-        return new ResponseEntity<>(interest_AreaService.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(interestAreaService.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
