@@ -23,7 +23,7 @@ public class InterestAreaService implements IInterestAreaService {
 
     @Override
     public ResourceCreated save(InterestAreaRequest interestAreaRequest) {
-        return new ResourceCreated(interest_AreaRepository.save(interest_AreaRequest.convertToInterest_Area()).getId());
+        return new ResourceCreated(interestAreaRepository.save(interestAreaRequest.convertToInterestArea()).getId());
     }
 
     @Override
