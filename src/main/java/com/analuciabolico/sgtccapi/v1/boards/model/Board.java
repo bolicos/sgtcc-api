@@ -6,11 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
@@ -63,9 +66,16 @@ public class Board implements Serializable {
 
     @NonNull
     @Column(nullable = false, columnDefinition = "timestamp")
-    protected LocalDateTime createdAt;
+    private LocalDateTime createdAt;
 
     @NonNull
     @Column(nullable = false, columnDefinition = "timestamp")
-    protected LocalDateTime dateScheduled;
+    private LocalDateTime dateScheduled;
+
+    @ManyToMany
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "FK_BOARD_UID", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "FK_EVALUATOR_UID", nullable = false)
+    )
+    private Set<Board> evaluators;
 }
