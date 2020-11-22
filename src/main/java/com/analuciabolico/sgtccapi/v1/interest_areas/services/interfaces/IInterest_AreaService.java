@@ -12,5 +12,5 @@ public interface IInterest_AreaService {
 
     InterestArea findById(Long id);
 
-    List<Interest_Area> findAll(Sort sort);
+    List<InterestArea> findAll(Sort sort);
 }
