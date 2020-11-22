@@ -17,7 +17,7 @@ import java.util.Set;
 public class Title implements Serializable {
 
     @Builder
-    public Title(@NonNull String description, @NonNull String nomenclature, @NonNull String type, @NonNull Long id) {
+    public Title(@NonNull String description, @NonNull String nomenclature, @NonNull String type, Long id) {
         this.description = description;
         this.nomenclature = nomenclature;
         this.type = type;

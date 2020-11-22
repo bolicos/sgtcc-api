@@ -19,11 +19,6 @@ spring:
   jackson:
     date-format:  yyyy-MM-dd HH:mm:ss
 
-  security:
-    user:
-      name: admin
-      password: 12345
-
   flyway:
     enabled: false
 

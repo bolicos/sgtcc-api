@@ -4,6 +4,15 @@ import com.analuciabolico.sgtccapi.v1.titles.model.Title;
 
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TitleRequest implements Serializable {
     private String description;
     private String nomenclature;
