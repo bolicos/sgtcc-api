@@ -21,7 +21,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/v1/suggestion")
+@RequestMapping("/api/v1/suggestions")
 public class SuggestionController {
     private final ISuggestionService suggestionService;
 
