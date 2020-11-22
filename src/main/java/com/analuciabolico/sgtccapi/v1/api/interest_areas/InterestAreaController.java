@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/api/v1/interest_areas")
 public class InterestAreaController {
-    private final IInterest_AreaService interestAreaService;
+    private final IInterestAreaService interestAreaService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<InterestArea>> getAll(@RequestParam(required = false, defaultValue = "ASC") String sort) {
