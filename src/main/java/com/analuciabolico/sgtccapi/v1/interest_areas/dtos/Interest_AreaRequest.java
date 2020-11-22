@@ -1,6 +1,6 @@
 package com.analuciabolico.sgtccapi.v1.interest_areas.dtos;
 
-import com.analuciabolico.sgtccapi.v1.interest_areas.model.Interest_Area;
+import com.analuciabolico.sgtccapi.v1.interest_areas.model.InterestArea;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
