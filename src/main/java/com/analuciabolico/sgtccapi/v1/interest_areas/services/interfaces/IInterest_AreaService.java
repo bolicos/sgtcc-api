@@ -8,7 +8,7 @@ import org.springframework.data.domain.Sort;
 import java.util.List;
 
 public interface IInterest_AreaService {
-    ResourceCreated save(Interest_AreaRequest interest_AreaRequest);
+    ResourceCreated save(InterestAreaRequest interestAreaRequest);
 
     Interest_Area findById(Long id);
 
