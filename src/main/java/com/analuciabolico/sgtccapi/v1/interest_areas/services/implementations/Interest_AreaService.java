@@ -6,7 +6,9 @@ import com.analuciabolico.sgtccapi.v1.interest_areas.model.Interest_Area;
 import com.analuciabolico.sgtccapi.v1.interest_areas.repository.Interest_AreaRepository;
 import com.analuciabolico.sgtccapi.v1.interest_areas.services.interfaces.IInterest_AreaService;
 
+import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -14,6 +16,8 @@ import java.util.List;
 import static com.analuciabolico.sgtccapi.v1.core.validations.GenericMessagesValidationEnum.ENTITY_NOT_FOUND;
 import static com.analuciabolico.sgtccapi.v1.core.validations.MessageValidationProperties.getMessage;
 
+@Service
+@AllArgsConstructor
 public class Interest_AreaService implements IInterest_AreaService {
     private final Interest_AreaRepository interest_AreaRepository;
 
