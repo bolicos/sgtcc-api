@@ -10,11 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.Set;
+import com.analuciabolico.sgtccapi.v1.boards.model.Board;
 import com.analuciabolico.sgtccapi.v1.semesters.model.Semester;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
 
@@ -61,6 +64,9 @@ public class Class implements Serializable {
     @ManyToOne
     @JoinColumn(name = "FK_SEMESTER_UID")
     private Semester semester;
+
+    @OneToMany(mappedBy = "aClass")
+    private Set<Board> boards;
 
     @NonNull
     @Column(nullable = false, columnDefinition = "timestamp")

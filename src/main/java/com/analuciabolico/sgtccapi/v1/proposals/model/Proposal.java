@@ -7,10 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
+import com.analuciabolico.sgtccapi.v1.boards.model.Board;
 import com.analuciabolico.sgtccapi.v1.students.model.Student;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
 
@@ -61,4 +64,7 @@ public class Proposal implements Serializable {
     @ManyToOne
     @JoinColumn(name = "FK_LEADER_UID")
     private Teacher leader;
+
+    @OneToMany(mappedBy = "proposal")
+    private Set<Board> boards;
 }
