@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
 import com.analuciabolico.sgtccapi.v1.examinations.dtos.ExaminationRequest;
 import com.analuciabolico.sgtccapi.v1.examinations.model.Examination;
-import com.analuciabolico.sgtccapi.v1.examinations.services.implementations.ExaminationService;
+import com.analuciabolico.sgtccapi.v1.examinations.services.interfaces.IExaminationService;
 
 import lombok.AllArgsConstructor;
 
@@ -24,7 +24,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RequestMapping("/api/v1/examinations")
 public class ExaminationController {
-    private final ExaminationService examinationService;
+    private final IExaminationService examinationService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Examination>> getAll(@RequestParam(required = false, defaultValue = "ASC") String sort) {
