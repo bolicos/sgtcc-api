@@ -35,12 +35,10 @@ public class Student extends Person implements Serializable {
 
     @Builder
     public Student(@NonNull String name, @NonNull String email, @NonNull String phone, @NonNull String registration,
-                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals,
-                   Set<Class> classes) {
+                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals) {
         super(name, email, phone, registration, cpf, createdAt);
         this.id = id;
         this.proposals = proposals;
-        this.classes = classes;
     }
 
     @Id
@@ -50,11 +48,5 @@ public class Student extends Person implements Serializable {
     @OneToMany(mappedBy = "author")
     private Set<Proposal> proposals;
 
-    @ManyToMany
-    @JoinTable(
-            name = "CLASSES_STUDENTS",
-            joinColumns = @JoinColumn(name = "FK_STUDENT_UID"),
-            inverseJoinColumns = @JoinColumn(name = "FK_CLASS_UID"))
-    private Set<Class> classes;
 
 }

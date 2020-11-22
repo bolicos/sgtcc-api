@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
+import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.core.models.Person;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
 import com.analuciabolico.sgtccapi.v1.titles.model.Title;
@@ -52,4 +53,8 @@ public class Teacher extends Person implements Serializable {
     @ManyToOne
     @JoinColumn(name = "FK_TITLE_UID")
     private Title title;
+
+    @OneToMany(mappedBy = "teacher")
+    private Set<Class> classes;
+
 }
