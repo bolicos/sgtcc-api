@@ -35,7 +35,7 @@ public class InterestArea implements Serializable {
     @Column(name = "NAME", nullable = false, length = 200)
     private String name;
 
-    @lombok.NonNull
+    @NonNull
     @Column(nullable = false, columnDefinition = "timestamp")
     protected LocalDateTime createdAt;
 
