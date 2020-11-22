@@ -21,7 +21,7 @@ public class InterestAreaController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Interest_Area>> getAll(@RequestParam(required = false, defaultValue = "ASC") String sort) {
-        List<Interest_Area> list = interest_AreaService.findAll(Sort.by(Sort.Direction.fromString(sort), "name"));
+        List<Interest_Area> list = interestAreaService.findAll(Sort.by(Sort.Direction.fromString(sort), "name"));
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
