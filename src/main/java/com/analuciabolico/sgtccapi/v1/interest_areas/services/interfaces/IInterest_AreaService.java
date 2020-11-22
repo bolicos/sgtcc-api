@@ -10,7 +10,7 @@ import java.util.List;
 public interface IInterest_AreaService {
     ResourceCreated save(InterestAreaRequest interestAreaRequest);
 
-    Interest_Area findById(Long id);
+    InterestArea findById(Long id);
 
     List<Interest_Area> findAll(Sort sort);
 }
