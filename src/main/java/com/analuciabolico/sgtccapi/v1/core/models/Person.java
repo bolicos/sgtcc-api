@@ -2,6 +2,7 @@ package com.analuciabolico.sgtccapi.v1.core.models;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class Person {
+public class Person implements Serializable {
 
     @NonNull
     @Column(length = 100, nullable = false, unique = true)

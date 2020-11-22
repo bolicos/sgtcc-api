@@ -10,13 +10,16 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Set;
+import com.analuciabolico.sgtccapi.v1.core.models.Person;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
 import com.analuciabolico.sgtccapi.v1.titles.model.Title;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -27,10 +30,13 @@ import lombok.ToString;
 @Entity
 @Table(name = "TEACHERS")
 @SequenceGenerator(name = "SEQ_TEACHERS", sequenceName = "SEQUENCE_TEACHERS", allocationSize = 1)
-public class Teacher implements Serializable {
+public class Teacher extends Person implements Serializable {
 
     @Builder
-    public Teacher(Long id, Set<Proposal> proposals, Title title) {
+    public Teacher(@NonNull String name, @NonNull String email, @NonNull String phone, @NonNull String registration,
+                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals,
+                   Title title) {
+        super(name, email, phone, registration, cpf, createdAt);
         this.id = id;
         this.proposals = proposals;
         this.title = title;
