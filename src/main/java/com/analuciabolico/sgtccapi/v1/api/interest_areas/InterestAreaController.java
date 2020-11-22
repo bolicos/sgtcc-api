@@ -3,7 +3,7 @@ package com.analuciabolico.sgtccapi.v1.api.interest_areas;
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
 import com.analuciabolico.sgtccapi.v1.interest_areas.dtos.InterestAreaRequest;
 import com.analuciabolico.sgtccapi.v1.interest_areas.model.InterestArea;
-import com.analuciabolico.sgtccapi.v1.interest_areas.services.interfaces.InterestAreaService;
+import com.analuciabolico.sgtccapi.v1.interest_areas.services.interfaces.IInterestAreaService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
