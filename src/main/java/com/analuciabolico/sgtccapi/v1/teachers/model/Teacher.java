@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
+import com.analuciabolico.sgtccapi.v1.boards.model.Board;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.core.models.Person;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
@@ -56,5 +57,8 @@ public class Teacher extends Person implements Serializable {
 
     @OneToMany(mappedBy = "teacher")
     private Set<Class> classes;
+
+    @OneToMany(mappedBy = "leader")
+    private Set<Board> boards;
 
 }
