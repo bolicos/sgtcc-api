@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class InterestArea implements Serializable {
 
     @Builder
-    public Interest_Area(@NonNull String name, @NonNull LocalDateTime createdAt, @NonNull String description, @NonNull Long id) {
+    public InterestArea(@NonNull String name, @NonNull LocalDateTime createdAt, @NonNull String description, @NonNull Long id) {
         this.name = name;
         this.createdAt = createdAt;
         this.description = description;
