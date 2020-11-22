@@ -1,23 +1,28 @@
 package com.analuciabolico.sgtccapi.v1.api.titles;
 
-import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
-import com.analuciabolico.sgtccapi.v1.titles.dtos.TitleRequest;
-import com.analuciabolico.sgtccapi.v1.titles.model.Title;
-import com.analuciabolico.sgtccapi.v1.titles.services.interfaces.ITitleService;
-import lombok.AllArgsConstructor;
+import java.util.List;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
+import com.analuciabolico.sgtccapi.v1.titles.dtos.TitleRequest;
+import com.analuciabolico.sgtccapi.v1.titles.model.Title;
+import com.analuciabolico.sgtccapi.v1.titles.services.interfaces.ITitleService;
 
-import java.io.Serializable;
-import java.util.List;
+import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/v1/titles")
-public class TitleController implements Serializable {
+public class TitleController {
     private final ITitleService titleService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

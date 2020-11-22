@@ -16,7 +16,7 @@ import java.util.Set;
 @SequenceGenerator(name = "SEQ_TITLES", sequenceName = "SEQUENCE_TITLES", allocationSize = 1)
 public class Title implements Serializable {
 
-    @Builder()
+    @Builder
     public Title(@NonNull String description, @NonNull String nomenclature, @NonNull String type, @NonNull Long id) {
         this.description = description;
         this.nomenclature = nomenclature;
@@ -25,7 +25,6 @@ public class Title implements Serializable {
     }
 
     @Id
-    @NonNull
     @GeneratedValue(generator = "SEQ_TITLES", strategy = GenerationType.SEQUENCE)
     private Long id;
 
@@ -38,10 +37,7 @@ public class Title implements Serializable {
     @Column(name = "TYPE", nullable = false, length = 200)
     private String type;
 
-    @OneToMany(mappedBy = "FK_TITLE_UID")
+    @OneToMany(mappedBy = "title")
     private Set<Teacher> teachers;
 
-    public Long getId() {
-        return id;
-    }
 }
