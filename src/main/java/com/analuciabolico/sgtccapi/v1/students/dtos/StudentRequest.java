@@ -1,10 +1,14 @@
 package com.analuciabolico.sgtccapi.v1.students.dtos;
 
-import com.analuciabolico.sgtccapi.v1.students.model.Student;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import com.analuciabolico.sgtccapi.v1.students.model.Student;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class StudentRequest implements Serializable {
     private String name;
     private String cpf;
