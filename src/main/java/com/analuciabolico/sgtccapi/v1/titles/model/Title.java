@@ -18,10 +18,10 @@ public class Title implements Serializable {
 
     @Builder()
     public Title(@NonNull String description, @NonNull String nomenclature, @NonNull String type, @NonNull Long id) {
-        this.description;
-        this.nomenclature;
-        this.type;
-        this.id;
+        this.description = description;
+        this.nomenclature = nomenclature;
+        this.type = type;
+        this.id = id;
     }
 
     @Id
