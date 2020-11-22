@@ -38,7 +38,6 @@ public class TitleController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResourceCreated> save(@RequestBody TitleRequest titleRequest) {
-        //System.out.println("name: "+titleRequest.);
         return new ResponseEntity<>(titleService.save(titleRequest), HttpStatus.CREATED);
     }
 }
