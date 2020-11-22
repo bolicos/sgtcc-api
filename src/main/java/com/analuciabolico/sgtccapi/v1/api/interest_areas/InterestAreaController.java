@@ -32,6 +32,6 @@ public class InterestAreaController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResourceCreated> save(@RequestBody Interest_AreaRequest interest_AreaRequest) {
-        return new ResponseEntity<>(interest_AreaService.save(interest_AreaRequest), HttpStatus.CREATED);
+        return new ResponseEntity<>(interestAreaService.save(interest_AreaRequest), HttpStatus.CREATED);
     }
 }
