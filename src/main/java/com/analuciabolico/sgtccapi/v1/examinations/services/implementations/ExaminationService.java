@@ -19,21 +19,21 @@ import static com.analuciabolico.sgtccapi.v1.core.validations.MessageValidationP
 @AllArgsConstructor
 public class ExaminationService implements IExaminationService {
 
-    private final ExaminationRepository emExaminationRepository;
+    private final ExaminationRepository examinationRepository;
 
     @Override
     public ResourceCreated save(ExaminationRequest examinationRequest) {
-        return new ResourceCreated(emExaminationRepository.save(examinationRequest.convertToExamination()).getId());
+        return new ResourceCreated(examinationRepository.save(examinationRequest.convertToExamination()).getId());
     }
 
     @Override
     public Examination findById(Long id) {
-        return emExaminationRepository.findById(id).orElseThrow(
+        return examinationRepository.findById(id).orElseThrow(
                 () -> new EntityNotFoundException(getMessage(ENTITY_NOT_FOUND)));
     }
 
     @Override
     public List<Examination> findAll(Sort sort) {
-        return emExaminationRepository.findAll(sort);
+        return examinationRepository.findAll(sort);
     }
 }
