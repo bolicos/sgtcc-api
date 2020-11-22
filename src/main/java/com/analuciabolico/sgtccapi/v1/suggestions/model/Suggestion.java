@@ -26,8 +26,8 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @Entity
-@Table(name = "TEACHERS")
-@SequenceGenerator(name = "SEQ_TEACHERS", sequenceName = "SEQUENCE_TEACHERS", allocationSize = 1)
+@Table(name = "SUGGESTIONS")
+@SequenceGenerator(name = "SEQ_SUGGESTIONS", sequenceName = "SEQUENCE_SUGGESTIONS", allocationSize = 1)
 public class Suggestion {
 
     @Builder
@@ -42,7 +42,7 @@ public class Suggestion {
     }
 
     @Id
-    @GeneratedValue(generator = "SEQ_TEACHERS", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "SEQ_SUGGESTIONS", strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @NonNull
