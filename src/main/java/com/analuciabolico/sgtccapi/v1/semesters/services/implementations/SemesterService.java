@@ -22,7 +22,7 @@ public class SemesterService implements ISemesterService {
     private final SemesterRepository semesterRepository;
 
     @Override
-    public ResourceCreated save(SemesterRequest studentRequest) {
+    public ResourceCreated save(SemesterRequest semesterRequest) {
         return new ResourceCreated(semesterRepository.save(studentRequest.convertToSemester()).getId());
     }
 
