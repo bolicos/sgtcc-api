@@ -10,7 +10,7 @@ public class InterestAreaRequest implements Serializable {
     private String description;
 
     public InterestArea convertToInterestArea() {
-        return  Interest_Area.builder()
+        return  InterestArea.builder()
                 .id(null).description(this.description).name(this.name).createdAt(LocalDateTime.now())
                 .build();
     }
