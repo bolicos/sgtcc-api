@@ -40,4 +40,8 @@ public class Title implements Serializable {
 
     @OneToMany(mappedBy = "fk_title_uid")
     private List<Teacher> teachers;
+
+    public Long getId() {
+        return id;
+    }
 }
