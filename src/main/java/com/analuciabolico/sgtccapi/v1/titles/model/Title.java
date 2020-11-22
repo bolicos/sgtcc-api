@@ -1,16 +1,16 @@
 package com.analuciabolico.sgtccapi.v1.titles.model;
 
-import com.analuciabolico.sgtccapi.v1.classes.model.Class;
-import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
-import lombok.Builder;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.List;
 
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Entity
 @Table(name = "TITLES")
 @SequenceGenerator(name = "SEQ_TITLES", sequenceName = "SEQUENCE_TITLES", allocationSize = 1)
