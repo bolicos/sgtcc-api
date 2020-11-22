@@ -1,6 +1,5 @@
 package com.analuciabolico.sgtccapi.v1.interest_areas.model;
 
-import io.micrometer.core.lang.NonNull;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 
