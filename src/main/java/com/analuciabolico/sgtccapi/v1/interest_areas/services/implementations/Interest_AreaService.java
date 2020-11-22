@@ -33,7 +33,7 @@ public class InterestAreaService implements IInterestAreaService {
     }
 
     @Override
-    public List<Interest_Area> findAll(Sort sort) {
+    public List<InterestArea> findAll(Sort sort) {
         return interest_AreaRepository.findAll(sort);
     }
 }
