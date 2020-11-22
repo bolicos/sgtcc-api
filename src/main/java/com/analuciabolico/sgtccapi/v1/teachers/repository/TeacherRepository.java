@@ -13,6 +13,6 @@ import javax.transaction.Transactional;
 public interface TeacherRepository extends JpaRepository<Teacher, Long> {
     @Transactional
     @Modifying(clearAutomatically = true)
-    @Query(value = "EXEC FUNCTION RETURN_TEACHER_TITLE(:#{Teacher.id})")
+    @Query(value = "EXEC FUNCTION RETURN_TEACHER_TITLE(:#{#id})")
     String findTitleByTeacher(@NonNull Long id);;
 }

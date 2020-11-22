@@ -1,6 +1,9 @@
 package com.analuciabolico.sgtccapi.v1.api.teachers;
 
 import java.util.List;
+
+import com.analuciabolico.sgtccapi.v1.teachers.repository.TeacherRepository;
+import com.analuciabolico.sgtccapi.v1.titles.model.Title;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,6 +30,7 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/api/v1/teachers")
 public class TeacherController {
     private final ITeacherService teacherService;
+    private final TeacherRepository teacherRepository;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Teacher>> getAll(@RequestParam(required = false, defaultValue = "ASC") String sort) {
@@ -42,5 +46,10 @@ public class TeacherController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResourceCreated> save(@RequestBody TeacherRequest teacherRequest) {
         return new ResponseEntity<>(teacherService.save(teacherRequest), HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/{id}/titles", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Title> findTitleByTeacher(@PathVariable Long id) {
+        return new ResponseEntity<>(teacherRepository.findTitleByTeacher(id), HttpStatus.OK);
     }
 }

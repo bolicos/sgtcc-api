@@ -40,7 +40,7 @@ public class Teacher extends Person implements Serializable {
     @Builder
     public Teacher(@NonNull String name, @NonNull String email, @NonNull String phone, @NonNull String registration,
                    @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals,
-                   Title title) {
+                   @NonNull Title title) {
         super(name, email, phone, registration, cpf, createdAt);
         this.id = id;
         this.proposals = proposals;
