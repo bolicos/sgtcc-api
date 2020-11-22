@@ -28,7 +28,7 @@ public class InterestAreaService implements IInterestAreaService {
 
     @Override
     public InterestArea findById(Long id) {
-        return interest_AreaRepository.findById(id).orElseThrow(
+        return interestAreaRepository.findById(id).orElseThrow(
                 () -> new EntityNotFoundException(getMessage(ENTITY_NOT_FOUND)));
     }
 
