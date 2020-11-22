@@ -19,7 +19,7 @@ import static com.analuciabolico.sgtccapi.v1.core.validations.MessageValidationP
 @Service
 @AllArgsConstructor
 public class InterestAreaService implements IInterestAreaService {
-    private final Interest_AreaRepository interest_AreaRepository;
+    private final InterestAreaRepository interestAreaRepository;
 
     @Override
     public ResourceCreated save(Interest_AreaRequest interest_AreaRequest) {
