@@ -21,7 +21,7 @@ public class ClassService implements IClassService {
     private final ClassRepository classRepository;
 
     @Override
-    public ResourceCreated save(ClassRequest studentRequest) {
+    public ResourceCreated save(ClassRequest classRequest) {
         return new ResourceCreated(classRepository.save(studentRequest.convertToClass()).getId());
     }
 
