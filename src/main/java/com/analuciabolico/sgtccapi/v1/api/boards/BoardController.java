@@ -28,7 +28,7 @@ public class BoardController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Board>> getAll(@RequestParam(required = false, defaultValue = "ASC") String sort) {
-        List<Board> list = boardService.findAll(Sort.by(Sort.Direction.fromString(sort), "date"));
+        List<Board> list = boardService.findAll(Sort.by(Sort.Direction.fromString(sort), "dateScheduled"));
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
