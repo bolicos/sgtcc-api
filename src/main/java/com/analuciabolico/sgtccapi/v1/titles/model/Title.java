@@ -38,7 +38,7 @@ public class Title implements Serializable {
     @Column(name = "TYPE", nullable = false, length = 200)
     private String type;
 
-    @OneToMany(mappedBy = "fk_title_uid")
+    @OneToMany(mappedBy = "FK_TITLE_UID")
     private List<Teacher> teachers;
 
     public Long getId() {
