@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
@@ -15,6 +17,7 @@ import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.boards.model.Board;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.core.models.Person;
+import com.analuciabolico.sgtccapi.v1.examinations.model.Examination;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
 import com.analuciabolico.sgtccapi.v1.titles.model.Title;
 
@@ -61,4 +64,9 @@ public class Teacher extends Person implements Serializable {
     @OneToMany(mappedBy = "leader")
     private Set<Board> boards;
 
+    @ManyToMany(mappedBy = "evaluators")
+    private Set<Board> evaluator;
+
+    @OneToMany(mappedBy = "teacher")
+    private Set<Examination> examinations;
 }

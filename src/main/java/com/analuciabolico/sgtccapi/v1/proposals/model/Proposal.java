@@ -14,6 +14,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.boards.model.Board;
+import com.analuciabolico.sgtccapi.v1.examinations.model.Examination;
 import com.analuciabolico.sgtccapi.v1.students.model.Student;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
 
@@ -67,4 +68,7 @@ public class Proposal implements Serializable {
 
     @OneToMany(mappedBy = "proposal")
     private Set<Board> boards;
+
+    @OneToMany(mappedBy = "proposal")
+    private Set<Examination> examinations;
 }
