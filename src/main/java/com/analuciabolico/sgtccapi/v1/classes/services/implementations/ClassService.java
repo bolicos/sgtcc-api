@@ -22,7 +22,7 @@ public class ClassService implements IClassService {
 
     @Override
     public ResourceCreated save(ClassRequest classRequest) {
-        return new ResourceCreated(classRepository.save(studentRequest.convertToClass()).getId());
+        return new ResourceCreated(classRepository.save(classRequest.convertToClass()).getId());
     }
 
     @Override
