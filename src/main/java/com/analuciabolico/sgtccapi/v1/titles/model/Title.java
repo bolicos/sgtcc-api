@@ -39,7 +39,7 @@ public class Title implements Serializable {
     private String type;
 
     @OneToMany(mappedBy = "FK_TITLE_UID")
-    private List<Teacher> teachers;
+    private Set<Teacher> teachers;
 
     public Long getId() {
         return id;
