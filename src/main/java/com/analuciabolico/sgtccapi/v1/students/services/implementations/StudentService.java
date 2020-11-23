@@ -4,10 +4,11 @@ import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.List;
 
-import io.micrometer.core.lang.NonNull;
+
+import com.analuciabolico.sgtccapi.v1.students.dtos.StudentProposalTitleResponse;
+import com.analuciabolico.sgtccapi.v1.students.repository.StudentJdbcRepository;
+import com.analuciabolico.sgtccapi.v1.teachers.repository.TeacherJdbcRepository;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
 import com.analuciabolico.sgtccapi.v1.students.dtos.StudentRequest;
@@ -24,6 +25,7 @@ import static com.analuciabolico.sgtccapi.v1.core.validations.MessageValidationP
 @AllArgsConstructor
 public class StudentService implements IStudentService {
     private final StudentRepository studentRepository;
+    private final StudentJdbcRepository studentdbcRepository;
 
     @Override
     public ResourceCreated save(StudentRequest studentRequest) {
@@ -41,8 +43,10 @@ public class StudentService implements IStudentService {
         return studentRepository.findAll(sort);
     }
 
-    public String findTitleProposalByStudent(Long id) {
-        return studentRepository.findTitleProposalByStudent(id);
+    @Override
+    public StudentProposalTitleResponse findTitleProposalByStudent(Long id) {
+        return studentdbcRepository.findTitleProposalByStudent(id).orElseThrow(
+                () -> new EntityNotFoundException(getMessage(ENTITY_NOT_FOUND)));
     }
 
 }
