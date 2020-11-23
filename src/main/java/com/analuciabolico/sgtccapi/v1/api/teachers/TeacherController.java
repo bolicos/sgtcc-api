@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
 import com.analuciabolico.sgtccapi.v1.teachers.dtos.TeacherRequest;
+import com.analuciabolico.sgtccapi.v1.teachers.dtos.TeacherTitleResponse;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
 import com.analuciabolico.sgtccapi.v1.teachers.services.interfaces.ITeacherService;
 
@@ -39,5 +40,10 @@ public class TeacherController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResourceCreated> save(@RequestBody TeacherRequest teacherRequest) {
         return new ResponseEntity<>(teacherService.save(teacherRequest), HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/{id}/titles", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<TeacherTitleResponse> findTitleByTeacher(@PathVariable Long id) {
+        return new ResponseEntity<>(teacherService.findTitleByTeacher(id), HttpStatus.OK);
     }
 }
