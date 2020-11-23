@@ -43,7 +43,7 @@ public class StudentController {
         return new ResponseEntity<>(studentService.save(studentRequest), HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/{id}/proposal_title", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/{id}/proposal-title", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StudentProposalTitleResponse> findTitleProposalByStudent(@PathVariable Long id) {
         return new ResponseEntity<>(studentService.findTitleProposalByStudent(id), HttpStatus.OK);
     }
