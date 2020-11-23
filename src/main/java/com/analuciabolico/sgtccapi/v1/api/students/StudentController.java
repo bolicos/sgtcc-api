@@ -1,6 +1,7 @@
 package com.analuciabolico.sgtccapi.v1.api.students;
 
 import java.util.List;
+
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,6 +17,7 @@ import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
 import com.analuciabolico.sgtccapi.v1.students.dtos.StudentRequest;
 import com.analuciabolico.sgtccapi.v1.students.model.Student;
 import com.analuciabolico.sgtccapi.v1.students.services.interfaces.IStudentService;
+import com.analuciabolico.sgtccapi.v1.students.dtos.StudentProposalTitleResponse;
 
 import lombok.AllArgsConstructor;
 
@@ -39,5 +41,10 @@ public class StudentController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResourceCreated> save(@RequestBody StudentRequest studentRequest) {
         return new ResponseEntity<>(studentService.save(studentRequest), HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/{id}/proposal-title", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<StudentProposalTitleResponse> findTitleProposalByStudent(@PathVariable Long id) {
+        return new ResponseEntity<>(studentService.findTitleProposalByStudent(id), HttpStatus.OK);
     }
 }
