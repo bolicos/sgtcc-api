@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
+
+import java.util.Map;
 import java.util.Optional;
 
 @Repository
@@ -18,7 +20,8 @@ public class StudentJdbcRepository {
         SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("RETURN_PROPOSAL_TITLE");
         SqlParameterSource in = new MapSqlParameterSource().addValue("P_ID_STUDENT", id);
 
-        String proposalTitle = simpleJdbcCall.execute(String.class, in);
+        Map<String, Object> outProcedure = simpleJdbcCall.execute(in);
+        String proposalTitle = (String) outProcedure.get("P_PROPOSALS_TITLE");
         return Optional.of(new StudentProposalTitleResponse(proposalTitle));
     }
 }
