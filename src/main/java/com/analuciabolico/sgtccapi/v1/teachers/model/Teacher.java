@@ -5,11 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.ParameterMode;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -39,12 +41,18 @@ public class Teacher extends Person implements Serializable {
 
     @Builder
     public Teacher(@NonNull String name, @NonNull String email, @NonNull String phone, @NonNull String registration,
-                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals,
-                   @NonNull Title title) {
+                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals, Title title,
+                   Set<Class> classes, Set<Board> boards, Set<Board> evaluator, Set<Examination> examinations,
+                   Set<Examination> suggestions) {
         super(name, email, phone, registration, cpf, createdAt);
         this.id = id;
         this.proposals = proposals;
         this.title = title;
+        this.classes = classes;
+        this.boards = boards;
+        this.evaluator = evaluator;
+        this.examinations = examinations;
+        this.suggestions = suggestions;
     }
 
     @Id
@@ -69,4 +77,7 @@ public class Teacher extends Person implements Serializable {
 
     @OneToMany(mappedBy = "teacher")
     private Set<Examination> examinations;
+
+    @OneToMany(mappedBy = "teacher")
+    private Set<Examination> suggestions;
 }
