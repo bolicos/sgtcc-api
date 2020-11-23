@@ -169,4 +169,4 @@ insert into BOARDS(id, created_at, date_scheduled, fk_class_uid, fk_leader_uid, 
 VALUES (SEQUENCE_BOARDS.nextval, SYSDATE, SYSDATE+20, 1, 1, 1);
 
 insert into BOARDS(id, created_at, date_scheduled, fk_class_uid, fk_leader_uid, fk_proposal_uid)
-VALUES (SEQUENCE_BOARDS.nextval, SYSDATE, SYSDATE+20, 1, 1, 2);
+VALUES (SEQUENCE_BOARDS.nextval, SYSDATE, SYSDATE+25, 1, 1, 2);
