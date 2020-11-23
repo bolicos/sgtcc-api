@@ -1,13 +1,10 @@
 package com.analuciabolico.sgtccapi.v1.students.services.implementations;
 
 import javax.persistence.EntityNotFoundException;
-import javax.transaction.Transactional;
 import java.util.List;
-
 
 import com.analuciabolico.sgtccapi.v1.students.dtos.StudentProposalTitleResponse;
 import com.analuciabolico.sgtccapi.v1.students.repository.StudentJdbcRepository;
-import com.analuciabolico.sgtccapi.v1.teachers.repository.TeacherJdbcRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
