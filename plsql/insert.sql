@@ -162,3 +162,11 @@ VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 0, 'bom conteudo', 'bo
 
 insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
 VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 0, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre big data', 6, 'avaliacao projeto tcc', SYSTIMESTAMP, 2, 5);
+
+
+--boards
+insert into BOARDS(id, created_at, date_scheduled, fk_class_uid, fk_leader_uid, fk_proposal_uid)
+VALUES (SEQUENCE_BOARDS.nextval, SYSDATE, SYSDATE+20, 1, 1, 1);
+
+insert into BOARDS(id, created_at, date_scheduled, fk_class_uid, fk_leader_uid, fk_proposal_uid)
+VALUES (SEQUENCE_BOARDS.nextval, SYSDATE, SYSDATE+20, 1, 1, 2);
