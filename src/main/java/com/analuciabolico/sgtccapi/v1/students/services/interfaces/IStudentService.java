@@ -13,4 +13,6 @@ public interface IStudentService {
     Student findById(Long id);
 
     List<Student> findAll(Sort sort);
+
+    String findTitleProposalByStudent(Long id);
 }
