@@ -1,6 +1,7 @@
 package com.analuciabolico.sgtccapi.v1.students.services.interfaces;
 
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
+import com.analuciabolico.sgtccapi.v1.students.dtos.StudentGuidanceResponse;
 import com.analuciabolico.sgtccapi.v1.students.dtos.StudentProposalTitleResponse;
 import com.analuciabolico.sgtccapi.v1.students.dtos.StudentRequest;
 import com.analuciabolico.sgtccapi.v1.students.model.Student;
@@ -16,4 +17,6 @@ public interface IStudentService {
     List<Student> findAll(Sort sort);
 
     StudentProposalTitleResponse findTitleProposalByStudent(Long id);
+
+    StudentGuidanceResponse findGuidanceByStudent(Long id);
 }

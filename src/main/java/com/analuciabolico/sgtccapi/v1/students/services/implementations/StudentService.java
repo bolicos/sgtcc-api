@@ -3,6 +3,7 @@ package com.analuciabolico.sgtccapi.v1.students.services.implementations;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
+import com.analuciabolico.sgtccapi.v1.students.dtos.StudentGuidanceResponse;
 import com.analuciabolico.sgtccapi.v1.students.dtos.StudentProposalTitleResponse;
 import com.analuciabolico.sgtccapi.v1.students.repository.StudentJdbcRepository;
 import org.springframework.data.domain.Sort;
@@ -43,6 +44,12 @@ public class StudentService implements IStudentService {
     @Override
     public StudentProposalTitleResponse findTitleProposalByStudent(Long id) {
         return studentdbcRepository.findTitleProposalByStudent(id).orElseThrow(
+                () -> new EntityNotFoundException(getMessage(ENTITY_NOT_FOUND)));
+    }
+
+    @Override
+    public StudentGuidanceResponse findGuidanceByStudent(Long id) {
+        return studentdbcRepository.findGuidanceByStudent(id).orElseThrow(
                 () -> new EntityNotFoundException(getMessage(ENTITY_NOT_FOUND)));
     }
 

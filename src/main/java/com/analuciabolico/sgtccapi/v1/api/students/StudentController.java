@@ -2,6 +2,7 @@ package com.analuciabolico.sgtccapi.v1.api.students;
 
 import java.util.List;
 
+import com.analuciabolico.sgtccapi.v1.students.dtos.StudentGuidanceResponse;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -46,5 +47,10 @@ public class StudentController {
     @GetMapping(value = "/{id}/proposal-title", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StudentProposalTitleResponse> findTitleProposalByStudent(@PathVariable Long id) {
         return new ResponseEntity<>(studentService.findTitleProposalByStudent(id), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/{id}/guidance", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<StudentGuidanceResponse> findGuidanceByStudent(@PathVariable Long id) {
+        return new ResponseEntity<>(studentService.findGuidanceByStudent(id), HttpStatus.OK);
     }
 }
