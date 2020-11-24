@@ -1,41 +1,46 @@
 package com.analuciabolico.sgtccapi.v1.core.models;
 
 import javax.persistence.Column;
-import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
-import com.analuciabolico.sgtccapi.v1.users.model.User;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @MappedSuperclass
-public class Person {
+public class Person implements Serializable {
 
-    @Column(nullable = false)
-    protected String nome;
+    @NonNull
+    @Column(length = 100, nullable = false, unique = true)
+    protected String name;
 
-    @Column(length = 100, nullable = false)
+    @NonNull
+    @Column(length = 100, nullable = false, unique = true)
     protected String email;
 
-    @Column(length = 11, nullable = false)
-    protected String telefone;
+    @NonNull
+    @Column(length = 11, nullable = false, unique = true)
+    protected String phone;
 
+    @NonNull
     @Column(length = 50, nullable = false, unique = true)
-    protected String matricula;
+    protected String registration;
 
+    @NonNull
     @Column(length = 11, nullable = false, unique = true)
     protected String cpf;
 
-    @OneToOne
-    @JoinColumn(name = "FK_USER_UID", nullable = false)
-    protected User user;
+    @NonNull
+    @Column(nullable = false, columnDefinition = "timestamp")
+    protected LocalDateTime createdAt;
 }

@@ -2,16 +2,26 @@ spring:
   main:
     allow-bean-definition-overriding: true
     banner-mode: "off"
+
   application:
     name: sgtcc-api
-  security:
-    user:
-      name: admin
-      password: 12345
-  h2:
-    console:
-      enabled: true
-      path: /h2
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: true
+
+  jackson:
+    date-format:  yyyy-MM-dd HH:mm:ss
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
 
 server:
   port: 8080
