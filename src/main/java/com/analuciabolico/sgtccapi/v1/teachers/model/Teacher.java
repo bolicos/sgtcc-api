@@ -18,6 +18,7 @@ import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.core.models.Person;
 import com.analuciabolico.sgtccapi.v1.examinations.model.Examination;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
+import com.analuciabolico.sgtccapi.v1.suggestions.model.Suggestion;
 import com.analuciabolico.sgtccapi.v1.titles.model.Title;
 
 import lombok.Builder;
@@ -38,9 +39,9 @@ public class Teacher extends Person implements Serializable {
 
     @Builder
     public Teacher(@NonNull String name, @NonNull String email, @NonNull String phone, @NonNull String registration,
-                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals, Title title,
-                   Set<Class> classes, Set<Board> boards, Set<Board> evaluator, Set<Examination> examinations,
-                   Set<Examination> suggestions) {
+                   @NonNull String cpf, @NonNull LocalDateTime createdAt, Long id, Set<Proposal> proposals,
+                   @NonNull Title title, Set<Class> classes, Set<Board> boards, Set<Board> evaluator,
+                   Set<Examination> examinations, Set<Suggestion> suggestions) {
         super(name, email, phone, registration, cpf, createdAt);
         this.id = id;
         this.proposals = proposals;
@@ -50,6 +51,10 @@ public class Teacher extends Person implements Serializable {
         this.evaluator = evaluator;
         this.examinations = examinations;
         this.suggestions = suggestions;
+    }
+
+    public Teacher(@NonNull Long id) {
+        this.id = id;
     }
 
     @Id
@@ -76,5 +81,5 @@ public class Teacher extends Person implements Serializable {
     private Set<Examination> examinations;
 
     @OneToMany(mappedBy = "teacher")
-    private Set<Examination> suggestions;
+    private Set<Suggestion> suggestions;
 }

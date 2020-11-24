@@ -36,7 +36,7 @@ public class ExaminationRequest {
                 .id(null).title(this.title).presentation(this.presentation).textContent(this.textContent)
                 .textStructure(this.textStructure).language(this.language).observation(this.observation)
                 .relevance(this.relevance).approved(this.approved).note(this.note).type(this.type)
-                .proposal(Proposal.builder().id(this.proposal).build()).createdAt(LocalDateTime.now())
-                .teacher(Teacher.builder().id(this.teacher).build()).build();
+                .proposal(new Proposal(this.proposal)).createdAt(LocalDateTime.now())
+                .teacher(new Teacher(this.teacher)).build();
     }
 }

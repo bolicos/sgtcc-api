@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.analuciabolico.sgtccapi.v1.classes.dtos.ClassAverageRequest;
 import com.analuciabolico.sgtccapi.v1.classes.dtos.ClassRequest;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.classes.services.interfaces.IClassService;
@@ -39,5 +40,11 @@ public class ClassController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResourceCreated> save(@RequestBody ClassRequest classRequest) {
         return new ResponseEntity<>(classService.save(classRequest), HttpStatus.CREATED);
+    }
+
+    @PostMapping(value = "/avg", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity calculateAverageStudent(@RequestBody ClassAverageRequest classAverageRequest) {
+        classService.calculateAverageStudent(classAverageRequest.getId(), classAverageRequest.getIdStudent());
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

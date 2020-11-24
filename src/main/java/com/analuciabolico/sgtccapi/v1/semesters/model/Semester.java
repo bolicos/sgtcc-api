@@ -16,6 +16,7 @@ import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -33,6 +34,10 @@ public class Semester implements Serializable {
         this.id = id;
         this.name = name;
         this.classes = classes;
+    }
+
+    public Semester(@NonNull Long id) {
+        this.id = id;
     }
 
     @Id

@@ -41,6 +41,10 @@ public class Suggestion {
         this.teacher = teacher;
     }
 
+    public Suggestion(@NonNull Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(generator = "SEQ_SUGGESTIONS", strategy = GenerationType.SEQUENCE)
     private Long id;
