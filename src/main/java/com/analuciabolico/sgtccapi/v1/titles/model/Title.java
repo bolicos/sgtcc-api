@@ -9,6 +9,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 import java.io.Serializable;
@@ -53,6 +54,7 @@ public class Title implements Serializable {
     @Column(name = "TYPE", nullable = false, length = 200)
     private String type;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "title")
     private Set<Teacher> teachers;
 

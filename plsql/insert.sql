@@ -152,16 +152,16 @@ VALUES (SEQUENCE_PROPOSALS.nextval, 'Proposta sobre ruby', SYSTIMESTAMP, 3, 2);
 
 --EXAMINATIONS
 insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
-VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 1, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre iot', 8, 'avaliacao projeto tcc', SYSTIMESTAMP, 1, 5);
+VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 1, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre iot', 8, 'PRE_EVALUATION', SYSTIMESTAMP, 1, 5);
 
 insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
-VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 1, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre iot', 7, 'avaliacao projeto tcc', SYSTIMESTAMP, 1, 4);
+VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 1, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre iot', 7, 'FINAL_EVALUATION', SYSTIMESTAMP, 1, 4);
 
 insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
-VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 0, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre big data', 5, 'avaliacao projeto tcc', SYSTIMESTAMP, 2, 5);
+VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 0, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre big data', 5, 'PRE_EVALUATION', SYSTIMESTAMP, 2, 5);
 
 insert into EXAMINATIONS(id, presentation, approved, text_content, text_structure, language, observation, relevance, title, note, type, created_at, fk_proposal_uid, fk_teacher_uid)
-VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 0, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre big data', 6, 'avaliacao projeto tcc', SYSTIMESTAMP, 2, 5);
+VALUES(SEQUENCE_EXAMINATIONS.nextval, 'boa apresentacao', 0, 'bom conteudo', 'boa estrutura', 'boa linguagem', 'observacoes', 'boa relevancia', 'titulo sobre big data', 6, 'FINAL_EVALUATION', SYSTIMESTAMP, 2, 5);
 
 
 --boards

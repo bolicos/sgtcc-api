@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,6 +53,7 @@ public class InterestArea implements Serializable {
     private String name;
 
     @NonNull
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false, columnDefinition = "timestamp")
     private LocalDateTime createdAt;
 }

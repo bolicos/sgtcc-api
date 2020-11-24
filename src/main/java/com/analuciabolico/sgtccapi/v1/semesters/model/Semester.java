@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -47,6 +48,7 @@ public class Semester implements Serializable {
     @Column(nullable = false, length = 6)
     private String name;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "semester")
     private Set<Class> classes;
 }

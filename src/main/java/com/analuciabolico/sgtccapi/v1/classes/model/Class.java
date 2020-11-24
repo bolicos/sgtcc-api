@@ -20,6 +20,8 @@ import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.boards.model.Board;
 import com.analuciabolico.sgtccapi.v1.semesters.model.Semester;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -69,10 +71,12 @@ public class Class implements Serializable {
     @JoinColumn(name = "FK_SEMESTER_UID")
     private Semester semester;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "aClass")
     private Set<Board> boards;
 
     @NonNull
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false, columnDefinition = "timestamp")
     protected LocalDateTime createdAt;
 

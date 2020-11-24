@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 import com.analuciabolico.sgtccapi.v1.examinations.enums.ExaminationTypeEnum;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -101,6 +102,7 @@ public class Examination implements Serializable {
     private ExaminationTypeEnum type;
 
     @NonNull
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false, columnDefinition = "timestamp")
     private LocalDateTime createdAt;
 
