@@ -10,4 +10,3 @@ begin
     return cur_s;
 end;
 /
-show errors;
