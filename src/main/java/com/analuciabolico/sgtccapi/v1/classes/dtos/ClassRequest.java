@@ -2,10 +2,8 @@ package com.analuciabolico.sgtccapi.v1.classes.dtos;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.semesters.model.Semester;
-import com.analuciabolico.sgtccapi.v1.students.model.Student;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
 
 import lombok.AllArgsConstructor;
@@ -20,14 +18,13 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ClassRequest implements Serializable {
     private String name;
-    private Set<Student> students;
-    private Teacher teacher;
-    private Semester semester;
+    private Long teacher;
+    private Long semester;
 
 
     public Class convertToClass() {
         return  Class.builder()
-                .id(null).name(this.name).teacher(this.teacher).createdAt(LocalDateTime.now()).semester(this.semester)
-                .build();
+                .id(null).name(this.name).teacher(new Teacher(this.teacher)).semester(new Semester(this.semester))
+                .createdAt(LocalDateTime.now()).build();
     }
 }

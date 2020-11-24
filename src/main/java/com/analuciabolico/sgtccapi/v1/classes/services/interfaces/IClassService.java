@@ -12,4 +12,6 @@ public interface IClassService {
     Class findById(Long id);
 
     List<Class> findAll(Sort sort);
+
+    void calculateAverageStudent(Long id, Long idStudent);
 }

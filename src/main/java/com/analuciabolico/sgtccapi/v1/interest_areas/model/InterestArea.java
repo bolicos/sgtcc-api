@@ -36,6 +36,10 @@ public class InterestArea implements Serializable {
         this.id = id;
     }
 
+    public InterestArea(@NonNull Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(generator = "SEQ_INTEREST_AREAS", strategy = GenerationType.SEQUENCE)
     private Long id;

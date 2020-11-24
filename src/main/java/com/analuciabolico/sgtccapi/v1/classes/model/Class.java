@@ -47,6 +47,10 @@ public class Class implements Serializable {
         this.createdAt = createdAt;
     }
 
+    public Class(@NonNull Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(generator = "SEQ_CLASSES", strategy = GenerationType.SEQUENCE)
     private Long id;

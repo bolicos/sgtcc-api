@@ -1,15 +1,27 @@
 package com.analuciabolico.sgtccapi.v1.titles.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
-import lombok.*;
 
-import javax.persistence.*;
+
 import java.io.Serializable;
 import java.util.Set;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.Setter;
+
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @Entity
 @Table(name = "TITLES")
@@ -21,6 +33,10 @@ public class Title implements Serializable {
         this.description = description;
         this.nomenclature = nomenclature;
         this.type = type;
+        this.id = id;
+    }
+
+    public Title(@NonNull Long id) {
         this.id = id;
     }
 

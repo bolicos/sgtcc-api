@@ -37,6 +37,10 @@ public class Student extends Person implements Serializable {
         this.proposals = proposals;
     }
 
+    public Student(@NonNull Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(generator = "SEQ_STUDENTS", strategy = GenerationType.SEQUENCE)
     private Long id;

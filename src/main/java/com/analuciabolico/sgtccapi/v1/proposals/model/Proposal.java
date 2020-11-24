@@ -35,13 +35,17 @@ import lombok.ToString;
 public class Proposal implements Serializable {
 
     @Builder
-    public Proposal(Long id, @NonNull String title, @NonNull LocalDateTime createdAt, @NonNull Long author,
-                    @NonNull Long leader) {
+    public Proposal(Long id, @NonNull String title, @NonNull LocalDateTime createdAt, @NonNull Student author,
+                    @NonNull Teacher leader) {
         this.id = id;
         this.title = title;
         this.createdAt = createdAt;
-        this.author = Student.builder().id(author).build();
-        this.leader = Teacher.builder().id(leader).build();
+        this.author = author;
+        this.leader = leader;
+    }
+
+    public Proposal(@NonNull Long id) {
+        this.id = id;
     }
 
     @Id

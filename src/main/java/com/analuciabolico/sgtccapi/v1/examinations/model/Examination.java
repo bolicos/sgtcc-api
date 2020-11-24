@@ -55,6 +55,10 @@ public class Examination implements Serializable {
         this.teacher = teacher;
     }
 
+    public Examination(@NonNull Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(generator = "SEQ_EXAMINATIONS", strategy = GenerationType.SEQUENCE)
     private Long id;

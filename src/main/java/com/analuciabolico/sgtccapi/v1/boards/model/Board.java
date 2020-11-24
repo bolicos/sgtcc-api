@@ -45,6 +45,10 @@ public class Board implements Serializable {
         this.dateScheduled = dateScheduled;
     }
 
+    public Board(@NonNull Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(generator = "SEQ_BOARDS", strategy = GenerationType.SEQUENCE)
     private Long id;
