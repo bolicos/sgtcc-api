@@ -33,6 +33,7 @@ ext {
 	set('springCloudVersion', "2020.0.0-SNAPSHOT")
 	set('flywayVersion', '7.0.2')
 	set('swaggerVersion', '2.9.2')
+	set('itextPdfVersion', '5.5.13.2')
 	set('springBootVersion', '2.4.0-SNAPSHOT')
 	set('snippetsDir', file("build/generated-snippets"))
 }
@@ -44,6 +45,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation "com.itextpdf:itextpdf:${itextPdfVersion}"
 	implementation "org.flywaydb:flyway-core:${flywayVersion}"
 	implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
 	implementation "io.springfox:springfox-swagger2:${swaggerVersion}"

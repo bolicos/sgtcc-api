@@ -1,9 +1,9 @@
 package com.analuciabolico.sgtccapi.v1.classes.services.interfaces;
 
 import java.util.List;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Sort;
 import com.analuciabolico.sgtccapi.v1.classes.dtos.ClassRequest;
-import com.analuciabolico.sgtccapi.v1.classes.dtos.StudentClassResponse;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
 
@@ -16,5 +16,5 @@ public interface IClassService {
 
     void calculateAverageStudent(Long id, Long idStudent);
 
-    List<StudentClassResponse> getStudentsReportsByClass(Long id);
+    InputStreamResource getStudentsReportsByClass(Long id);
 }
