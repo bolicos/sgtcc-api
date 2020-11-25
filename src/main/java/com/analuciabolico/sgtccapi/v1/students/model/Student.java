@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.core.models.Person;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -45,6 +46,7 @@ public class Student extends Person implements Serializable {
     @GeneratedValue(generator = "SEQ_STUDENTS", strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "author")
     private Set<Proposal> proposals;
 

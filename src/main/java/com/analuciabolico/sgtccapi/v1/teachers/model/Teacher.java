@@ -20,6 +20,7 @@ import com.analuciabolico.sgtccapi.v1.examinations.model.Examination;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
 import com.analuciabolico.sgtccapi.v1.suggestions.model.Suggestion;
 import com.analuciabolico.sgtccapi.v1.titles.model.Title;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -61,6 +62,7 @@ public class Teacher extends Person implements Serializable {
     @GeneratedValue(generator = "SEQ_TEACHERS", strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "leader")
     private Set<Proposal> proposals;
 
@@ -68,18 +70,23 @@ public class Teacher extends Person implements Serializable {
     @JoinColumn(name = "FK_TITLE_UID")
     private Title title;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "teacher")
     private Set<Class> classes;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "leader")
     private Set<Board> boards;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "evaluators")
     private Set<Board> evaluator;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "teacher")
     private Set<Examination> examinations;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "teacher")
     private Set<Suggestion> suggestions;
 }

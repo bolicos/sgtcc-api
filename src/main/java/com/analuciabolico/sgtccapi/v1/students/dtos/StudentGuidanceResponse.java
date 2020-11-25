@@ -1,4 +1,4 @@
-package com.analuciabolico.sgtccapi.v1.classes.dtos;
+package com.analuciabolico.sgtccapi.v1.students.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClassAverageRequest {
-    private Long id;
-    private Long idStudent;
+public class StudentGuidanceResponse {
+    private String guidance;
 }

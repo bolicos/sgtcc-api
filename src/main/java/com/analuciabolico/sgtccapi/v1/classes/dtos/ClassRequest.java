@@ -21,7 +21,6 @@ public class ClassRequest implements Serializable {
     private Long teacher;
     private Long semester;
 
-
     public Class convertToClass() {
         return  Class.builder()
                 .id(null).name(this.name).teacher(new Teacher(this.teacher)).semester(new Semester(this.semester))

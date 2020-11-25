@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -61,6 +62,7 @@ public class Suggestion {
     private boolean search;
 
     @NonNull
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false, columnDefinition = "timestamp")
     private LocalDateTime createdAt;
 

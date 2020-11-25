@@ -17,6 +17,7 @@ import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.proposals.model.Proposal;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -69,6 +70,7 @@ public class Board implements Serializable {
     private Proposal proposal;
 
     @NonNull
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false, columnDefinition = "timestamp")
     private LocalDateTime createdAt;
 
@@ -81,5 +83,5 @@ public class Board implements Serializable {
             joinColumns = @JoinColumn(name = "FK_BOARD_UID", nullable = false),
             inverseJoinColumns = @JoinColumn(name = "FK_EVALUATOR_UID", nullable = false)
     )
-    private Set<Board> evaluators;
+    private Set<Teacher> evaluators;
 }

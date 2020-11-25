@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.analuciabolico.sgtccapi.v1.classes.dtos.ClassRequest;
+import com.analuciabolico.sgtccapi.v1.classes.dtos.StudentClassResponse;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.classes.repository.ClassJdbcRepository;
 import com.analuciabolico.sgtccapi.v1.classes.repository.ClassRepository;
@@ -44,4 +45,10 @@ public class ClassService implements IClassService {
         classJdbcRepository.calculateAverageStudent(id, idStudent).orElseThrow(
                         () -> new BusinessException(getMessage(ENTITY_NOT_FOUND)));
     }
+
+    @Override public List<StudentClassResponse> getStudentsReportsByClass(Long id) {
+        return classJdbcRepository.getStudentsReportsByClass(id);
+    }
+
+
 }

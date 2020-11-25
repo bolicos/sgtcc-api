@@ -17,6 +17,8 @@ import com.analuciabolico.sgtccapi.v1.boards.model.Board;
 import com.analuciabolico.sgtccapi.v1.examinations.model.Examination;
 import com.analuciabolico.sgtccapi.v1.students.model.Student;
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -57,6 +59,7 @@ public class Proposal implements Serializable {
     private String title;
 
     @NonNull
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false, columnDefinition = "timestamp")
     protected LocalDateTime createdAt;
 
@@ -70,9 +73,11 @@ public class Proposal implements Serializable {
     @JoinColumn(name = "FK_LEADER_UID")
     private Teacher leader;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "proposal")
     private Set<Board> boards;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "proposal")
     private Set<Examination> examinations;
 }
