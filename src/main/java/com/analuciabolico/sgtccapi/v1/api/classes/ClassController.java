@@ -1,7 +1,9 @@
 package com.analuciabolico.sgtccapi.v1.api.classes;
 
 import java.util.List;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.analuciabolico.sgtccapi.v1.classes.dtos.ClassAverageRequest;
 import com.analuciabolico.sgtccapi.v1.classes.dtos.ClassRequest;
-import com.analuciabolico.sgtccapi.v1.classes.dtos.StudentClassResponse;
 import com.analuciabolico.sgtccapi.v1.classes.model.Class;
 import com.analuciabolico.sgtccapi.v1.classes.services.interfaces.IClassService;
 import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
@@ -49,9 +50,11 @@ public class ClassController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping(value = "/{id}/report", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<StudentClassResponse>> getStudentReportsByClass(@PathVariable Long id) {
-        List<StudentClassResponse> list = classService.getStudentsReportsByClass(id);
-        return new ResponseEntity<>(list, HttpStatus.OK);
+    @GetMapping(value = "/{id}/report", produces = MediaType.APPLICATION_PDF_VALUE)
+    public ResponseEntity<InputStreamResource> getStudentReportsByClass(@PathVariable Long id) {
+        InputStreamResource pdf = classService.getStudentsReportsByClass(id);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "inline; filename=report-class-students.pdf");
+        return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(pdf);
     }
 }
