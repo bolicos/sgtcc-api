@@ -35,6 +35,11 @@ import lombok.ToString;
 @SequenceGenerator(name = "SEQ_EXAMINATIONS", sequenceName = "SEQUENCE_EXAMINATIONS", allocationSize = 1)
 public class Examination implements Serializable {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 7615082903618174399L;
+
     @Builder
     public Examination(Long id, @NonNull String presentation, boolean approved, @NonNull String textContent,
                        @NonNull String textStructure, @NonNull String language, String observation,

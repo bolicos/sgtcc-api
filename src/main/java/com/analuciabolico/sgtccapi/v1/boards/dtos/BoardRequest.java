@@ -17,6 +17,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardRequest implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6699778121604398500L;
     private Teacher leader;
     private Class aClass;
     private Proposal proposal;

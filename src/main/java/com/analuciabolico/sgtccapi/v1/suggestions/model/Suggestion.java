@@ -10,7 +10,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import com.analuciabolico.sgtccapi.v1.teachers.model.Teacher;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -29,7 +31,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "SUGGESTIONS")
 @SequenceGenerator(name = "SEQ_SUGGESTIONS", sequenceName = "SEQUENCE_SUGGESTIONS", allocationSize = 1)
-public class Suggestion {
+public class Suggestion implements Serializable {
 
     @Builder
     public Suggestion(Long id, @NonNull String description, @NonNull String title, boolean search,
@@ -43,7 +45,7 @@ public class Suggestion {
     }
 
     public Suggestion(@NonNull Long id) {
-        this.id = id;
+        this.id = Objects.requireNonNull(id);
     }
 
     @Id

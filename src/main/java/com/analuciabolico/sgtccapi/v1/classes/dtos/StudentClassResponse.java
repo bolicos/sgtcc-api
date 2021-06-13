@@ -12,6 +12,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentClassResponse implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -4337223303171074210L;
     private String semester;
     private String name;
     private String student;

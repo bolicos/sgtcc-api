@@ -45,7 +45,7 @@ public class ClassController {
     }
 
     @PostMapping(value = "/avg", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity calculateAverageStudent(@RequestBody ClassAverageRequest classAverageRequest) {
+    public ResponseEntity<Void> calculateAverageStudent(@RequestBody ClassAverageRequest classAverageRequest) {
         classService.calculateAverageStudent(classAverageRequest.getId(), classAverageRequest.getIdStudent());
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

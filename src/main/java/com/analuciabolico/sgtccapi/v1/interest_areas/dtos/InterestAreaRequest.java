@@ -15,6 +15,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class InterestAreaRequest implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -160029278070696554L;
     private String name;
     private String description;
 
