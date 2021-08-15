@@ -10,7 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 import com.analuciabolico.sgtccapi.v1.boards.model.Board;
@@ -36,7 +35,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "TEACHERS")
 @SequenceGenerator(name = "SEQ_TEACHERS", sequenceName = "SEQUENCE_TEACHERS", allocationSize = 1)
-public class Teacher extends Person implements Serializable {
+public class Teacher extends Person {
 
     @Builder
     public Teacher(@NonNull String name, @NonNull String email, @NonNull String phone, @NonNull String registration,

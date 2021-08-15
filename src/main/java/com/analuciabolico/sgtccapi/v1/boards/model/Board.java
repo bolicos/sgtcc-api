@@ -35,6 +35,11 @@ import lombok.ToString;
 @SequenceGenerator(name = "SEQ_BOARDS", sequenceName = "SEQUENCE_BOARDS", allocationSize = 1)
 public class Board implements Serializable {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -3908929097899343713L;
+
     @Builder
     public Board(Long id, @NonNull Teacher leader, @NonNull Class aClass, @NonNull Proposal proposal,
                  @NonNull LocalDateTime createdAt, @NonNull LocalDateTime dateScheduled) {

@@ -14,6 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TitleRequest implements Serializable {
+
     private String description;
     private String nomenclature;
     private String type;

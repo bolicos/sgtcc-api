@@ -1,6 +1,19 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@172.17.0.2:1521:XE
-    username: sgtcc
-    password: sgtcc
-    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+  flyway:
+    enabled: false
+
+  h2:
+    console:
+      enabled: true
+      path: /h2

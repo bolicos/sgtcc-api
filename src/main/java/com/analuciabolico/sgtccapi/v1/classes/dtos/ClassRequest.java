@@ -17,6 +17,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClassRequest implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6755635889378816768L;
     private String name;
     private Long teacher;
     private Long semester;

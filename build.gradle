@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.0-SNAPSHOT'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'org.springframework.boot' version '2.5.1'
+  	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'org.asciidoctor.convert' version '1.5.8'
 	id 'org.flywaydb.flyway' version '7.0.2'
 	id 'java'
@@ -15,8 +15,6 @@ compileJava.options.encoding = 'UTF-8'
 
 repositories {
 	mavenCentral()
-	maven { url 'https://repo.spring.io/milestone' }
-	maven { url 'https://repo.spring.io/snapshot' }
 }
 
 configurations {
@@ -30,7 +28,6 @@ configurations {
 }
 
 ext {
-	set('springCloudVersion', "2020.0.0-SNAPSHOT")
 	set('flywayVersion', '7.0.2')
 	set('swaggerVersion', '2.9.2')
 	set('itextPdfVersion', '5.5.13.2')
@@ -39,12 +36,9 @@ ext {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-starter-config'
-	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation "com.itextpdf:itextpdf:${itextPdfVersion}"
 	implementation "org.flywaydb:flyway-core:${flywayVersion}"
 	implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
@@ -60,12 +54,6 @@ dependencies {
 	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 }
 
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
-}
-
 test {
 	outputs.dir snippetsDir
 	useJUnitPlatform()
@@ -74,4 +62,10 @@ test {
 asciidoctor {
 	inputs.dir snippetsDir
 	dependsOn test
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'com.analuciabolico.sgtccapi.v1.Application'
+	}
 }

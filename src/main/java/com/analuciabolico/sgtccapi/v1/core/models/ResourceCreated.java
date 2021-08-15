@@ -12,5 +12,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResourceCreated implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 2572969311793736616L;
     private Long id;
 }

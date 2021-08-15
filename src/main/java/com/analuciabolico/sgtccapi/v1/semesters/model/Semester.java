@@ -30,6 +30,11 @@ import lombok.ToString;
 @SequenceGenerator(name = "SEQ_SEMESTERS", sequenceName = "SEQUENCE_SEMESTERS", allocationSize = 1)
 public class Semester implements Serializable {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -3926285517314417103L;
+
     @Builder
     public Semester(Long id, String name, Set<Class> classes) {
         this.id = id;

@@ -30,8 +30,13 @@ import lombok.ToString;
 @SequenceGenerator(name = "SEQ_INTEREST_AREAS", sequenceName = "SEQUENCE_INTEREST_AREAS", allocationSize = 1)
 public class InterestArea implements Serializable {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -8127756949781906110L;
+
     @Builder
-    public InterestArea(@NonNull String name, @NonNull LocalDateTime createdAt, @NonNull String description, @NonNull Long id) {
+    public InterestArea(@NonNull String name, @NonNull LocalDateTime createdAt, @NonNull String description, Long id) {
         this.name = name;
         this.createdAt = createdAt;
         this.description = description;
