@@ -1,9 +1,10 @@
 spring:
   datasource:
-    url: DATABASE_URL
-    username: DATABASE_USERNAME
-    password: DATABASE_PASSWORD
-    schemas: DATABASE_SCHEMA
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    schemas: ${DATABASE_SCHEMA}
+    driver-class-name: org.postgresql.Driver
 
   flyway:
     baseline-description: << Schema Prd Flyway >>
