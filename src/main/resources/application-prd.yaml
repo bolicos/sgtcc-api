@@ -4,3 +4,7 @@ spring:
     username: DATABASE_USERNAME
     password: DATABASE_PASSWORD
     schemas: DATABASE_SCHEMA
+
+  flyway:
+    baseline-description: << Schema Prd Flyway >>
+    schemas: assembly
