@@ -21,15 +21,16 @@ public class BoardRequest implements Serializable {
      *
      */
     private static final long serialVersionUID = 6699778121604398500L;
-    private Teacher leader;
-    private Class aClass;
-    private Proposal proposal;
+    private Long leader;
+    private Long aClass;
+    private Long proposal;
     private LocalDateTime date;
 
 
     public Board convertToBoard() {
         return  Board.builder()
-                .id(null).leader(this.leader).aClass(this.aClass).proposal(this.proposal).dateScheduled(this.date)
+                .id(null).leader(new Teacher(this.leader)).aClass(new Class(this.aClass))
+                .proposal(new Proposal(this.proposal)).dateScheduled(this.date)
                 .createdAt(LocalDateTime.now()).build();
     }
 }
