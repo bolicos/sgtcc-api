@@ -1,7 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.5.3'
   	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'org.flywaydb.flyway' version '7.0.2'
+	id 'org.flywaydb.flyway' version '7.13.0'
 	id 'java'
 	id 'idea'
 }
@@ -26,7 +26,7 @@ configurations {
 }
 
 ext {
-	set('flywayVersion', '7.0.2')
+	set('flywayVersion', '7.13.0')
 	set('swaggerVersion', '2.9.2')
 	set('itextPdfVersion', '5.5.13.2')
 }
