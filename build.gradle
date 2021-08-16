@@ -54,10 +54,5 @@ test {
 }
 
 tasks.named('jar') {
-	manifest = project.manifest {
-		attributes(
-			"Implementation-Title": "Sgtcc Api",
-			"Implementation-Version": version
-		)
-	}
+	enabled = false
 }
