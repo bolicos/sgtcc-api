@@ -41,4 +41,6 @@ management:
       cors:
         allow-credentials: true
         allowed-methods: GET, POST, PUT, PACTH, DELETE, OPTIONS, HEAD
-        allowed-origins: *
+        allowed-origins:
+          - https://sgtcc-front.herokuapp.com/
+          - http://localhost:3000/
