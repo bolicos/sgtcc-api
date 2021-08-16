@@ -31,7 +31,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "BOARDS")
+@Table(name = "boards")
 @SequenceGenerator(name = "SEQ_BOARDS", sequenceName = "SEQUENCE_BOARDS", allocationSize = 1)
 public class Board implements Serializable {
 
