@@ -11,6 +11,6 @@ spring:
         default_schema: assembly
 
   flyway:
-    baseline-description: << Schema Prd Flyway >>
+    baseline-description: << Schema PROD Flyway >>
     schemas: assembly
     locations: classpath:db/migration/postgres
