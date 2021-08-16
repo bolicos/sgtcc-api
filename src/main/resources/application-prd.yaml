@@ -5,6 +5,10 @@ spring:
     password: ${DATABASE_PASSWORD}
     schemas: ${DATABASE_SCHEMA}
     driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        default_schema: assembly
 
   flyway:
     baseline-description: << Schema Prd Flyway >>
