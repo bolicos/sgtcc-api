@@ -38,9 +38,3 @@ management:
   endpoints:
     web:
       base-path: "/api/v1/"
-      cors:
-        allow-credentials: false
-        allowed-methods: GET, POST, PUT, PACTH, DELETE, OPTIONS, HEAD
-        allowed-origins:
-          - https://sgtcc-front.herokuapp.com
-          - http://localhost:3000
