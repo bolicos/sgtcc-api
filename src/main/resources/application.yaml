@@ -1,7 +1,6 @@
 spring:
   main:
     allow-bean-definition-overriding: true
-    banner-mode: "off"
 
   application:
     name: sgtcc-api
