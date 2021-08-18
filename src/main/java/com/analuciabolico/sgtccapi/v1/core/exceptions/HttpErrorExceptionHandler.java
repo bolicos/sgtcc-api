@@ -15,19 +15,19 @@ public class HttpErrorExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = { IllegalArgumentException.class, IllegalStateException.class })
     protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
-        String bodyOfResponse = "This should be application specific";
-        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.CONFLICT, request);
+        String body = "This should be application specific";
+        return handleExceptionInternal(ex, body, new HttpHeaders(), HttpStatus.CONFLICT, request);
     }
 
     @ExceptionHandler(value = { InternalServerError.class })
     protected ResponseEntity<Object> handleInternalServerError(RuntimeException ex, WebRequest request) {
-        String bodyOfResponse = "Internal server Error";
-        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
+        String body = "Internal server Error";
+        return handleExceptionInternal(ex, body, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
 
     @ExceptionHandler(value = { NotFoundException.class })
     protected ResponseEntity<Object> handleNotFound(RuntimeException ex, WebRequest request) {
-        String bodyOfResponse = "Internal server Error";
-        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+        String body = "Not Found Error";
+        return handleExceptionInternal(ex, body, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
     }
 }
