@@ -28,14 +28,12 @@ configurations {
 ext {
 	set('flywayVersion', '7.13.0')
 	set('swaggerVersion', '2.9.2')
-	set('itextPdfVersion', '5.5.13.2')
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation "com.itextpdf:itextpdf:${itextPdfVersion}"
 	implementation "org.flywaydb:flyway-core:${flywayVersion}"
 	implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
 	implementation "io.springfox:springfox-swagger2:${swaggerVersion}"

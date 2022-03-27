@@ -1,4 +1,4 @@
-package com.analuciabolico.sgtccapi.v1.config;
+package com.analuciabolico.sgtccapi.v1.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig extends WebConfig {
+public class SwaggerConfiguration extends WebConfiguration {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)

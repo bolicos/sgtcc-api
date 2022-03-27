@@ -9,12 +9,6 @@ import com.analuciabolico.sgtccapi.v1.core.models.ResourceCreated;
 
 public interface IClassService {
     ResourceCreated save(ClassRequest classRequest);
-
     Class findById(Long id);
-
     List<Class> findAll(Sort sort);
-
-    void calculateAverageStudent(Long id, Long idStudent);
-
-    InputStreamResource getStudentsReportsByClass(Long id);
 }
