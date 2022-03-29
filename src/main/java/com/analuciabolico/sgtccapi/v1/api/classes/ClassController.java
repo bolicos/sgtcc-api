@@ -43,18 +43,4 @@ public class ClassController {
     public ResponseEntity<ResourceCreated> save(@RequestBody ClassRequest classRequest) {
         return new ResponseEntity<>(classService.save(classRequest), HttpStatus.CREATED);
     }
-
-    @PostMapping(value = "/avg", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> calculateAverageStudent(@RequestBody ClassAverageRequest classAverageRequest) {
-        classService.calculateAverageStudent(classAverageRequest.getId(), classAverageRequest.getIdStudent());
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
-    @GetMapping(value = "/{id}/report", produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> getStudentReportsByClass(@PathVariable Long id) {
-        InputStreamResource pdf = classService.getStudentsReportsByClass(id);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "inline; filename=report-class-students.pdf");
-        return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(pdf);
-    }
 }

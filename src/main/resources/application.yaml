@@ -1,7 +1,6 @@
 spring:
   main:
     allow-bean-definition-overriding: true
-    banner-mode: "off"
 
   application:
     name: sgtcc-api
@@ -38,9 +37,3 @@ management:
   endpoints:
     web:
       base-path: "/api/v1/"
-      cors:
-        allow-credentials: true
-        allowed-methods: GET, POST, PUT, PACTH, DELETE, OPTIONS, HEAD
-        allowed-origins:
-          - localhost:8080
-          - localhost:3000

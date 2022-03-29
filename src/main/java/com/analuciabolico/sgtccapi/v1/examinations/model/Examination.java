@@ -99,7 +99,7 @@ public class Examination implements Serializable {
     private String title;
 
     @NonNull
-    @Column(nullable = false, precision = 4, scale = 2)
+    @Column(nullable = false, precision = 4, scale = 2, columnDefinition = "NUMERIC(4,2)")
     private Double note;
 
     @Enumerated(EnumType.STRING)

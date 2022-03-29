@@ -1,4 +1,4 @@
-package com.analuciabolico.sgtccapi.v1.config;
+package com.analuciabolico.sgtccapi.v1.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebMvc
 @Configuration
-public class WebConfig implements WebMvcConfigurer {
+public class WebConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -18,7 +18,10 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/h2/**")
-                .allowCredentials(false);
+        registry.addMapping("/h2/**").allowCredentials(false);
+        registry.addMapping("/api/v1/**").allowCredentials(false).allowedHeaders("*")
+                .allowedOrigins("https://sgtcc-front.herokuapp.com", "http://localhost:3000");
+
     }
+
 }
